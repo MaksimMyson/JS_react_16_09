@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Test Page</title>
+  <style>
+    .info-container {
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script>
+    const { createElement } = React;
+    const { render } = ReactDOM;
+
+    const App = () => {
+      return createElement('div', { className: 'info-container' },
+        createElement('h1', null, 'Інформація про мене'),
+        createElement('p', null, 'ПІБ: Asta San'),
+        createElement('p', null, 'Контактний телефон: 123-333-3333'),
+        createElement('p', null, 'Електронна адреса: asta_san@san.com')
+      );
+    };
+
+    render(createElement(App), document.getElementById('root'));
+  </script>
+</body>
+</html>
